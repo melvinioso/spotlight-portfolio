@@ -13,14 +13,14 @@ const projects = [
   {
     name: 'Interactive Rating Component',
     description:
-      'Interactive rating component made with React and CSS Modules.',
+      'React and CSS Modules',
     link: { href: 'https://classy-cat-7632e7.netlify.app', label: 'Interactive Rating Component' },
     // logo: logoPlanetaria,
   },
   {
     name: 'FAQ Accordion',
     description:
-      'FAQ Accordion Component with React Spring animations and CSS Modules',
+      'React, React Spring animations, and CSS Modules',
     link: { href: 'https://cozy-cupcake-6fbded.netlify.app', label: 'FAQ Accordion' },
     // logo: logoAnimaginary,
   },
