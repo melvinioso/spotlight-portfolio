@@ -6,21 +6,17 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+
+import logoTake2 from '@/images/logos/take2.png'
+import logoDashSigns from '@/images/logos/dashsigns.png'
+import logoSem from '@/images/logos/sem.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -101,7 +97,7 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" target="_blank" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -139,35 +135,28 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Take2.co',
+      title: 'Software Engineer',
+      logo: logoTake2,
+      start: '2020',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Dashsigns.com',
+      title: 'Production Manager',
+      logo: logoDashSigns,
+      start: '2015',
+      end: '2020',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Southeast Media',
+      title: 'Large Format Department',
+      logo: logoSem,
+      start: '2012',
+      end: '2015',
     },
   ]
 
@@ -258,33 +247,21 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+          <h1 className="text-4xl font-bold text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Full Stack Developer, husband, dog dad, and amatuer disc golfer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Matt, a full stack web developer based out of Austin, TX.
+            Welcome to my site.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
+              href="https://github.com/melvinioso"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mattmcgavern/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -292,7 +269,7 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Photos />
-      <Container className="mt-24 md:mt-28">
+      {/* <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
@@ -304,7 +281,7 @@ export default function Home({ articles }) {
             <Resume />
           </div>
         </div>
-      </Container>
+      </Container> */}
     </>
   )
 }
